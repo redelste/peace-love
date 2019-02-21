@@ -9,30 +9,36 @@
 </head>
 
 <body>
-    <h1>WEBSITE</h1>
-    <p>
-        <strong>THIS IS A WEBSITE FOR HST-#@%</strong>
-        <br>
-        <sub>
-            BY RYAN EDELSTEIN
-        </sub>
-    </p>
-    <div class="centerPlease">
-        <img src="peace.jpg" alt="PEACE" class="peaceSize">
+    <div id="whole">
+        <h1>WEBSITE</h1>
+        <p>
+            <strong>THIS IS A WEBSITE FOR HST-#@%</strong>
+            <br>
+            <sub>
+                BY RYAN EDELSTEIN
+            </sub>
+            <br>
+            <button id="buttonOne" onclick="insert()">CLICK HERE</button>
+        </p>
+        <div class="centerPlease">
+            <img src="peace.jpg" alt="PEACE" class="peaceSize">
+        </div>
     </div>
 </body>
 <style>
     * {
         box-sizing: border-box;
     }
+
     .centerPlease {
         display: flex;
         justify-content: center;
         margin-top: 100px;
         align-items: center;
-        
+
     }
-    .peaceSize{
+
+    .peaceSize {
         margin-top: 100px;
         width: 350px;
         height: 350px;
@@ -61,13 +67,30 @@
 </style>
 
 <script>
-    document.addEventListener('mousemove', ({ pageX, pageY }) => {
-        const img = document.createElement('img');
-        img.src = './nuke.jpg';
-        img.style.left = `${pageX - 20}px`;
-        img.style.top = `${pageY-20}px`;
-        document.body.appendChild(img);
-    });
+    // document.addEventListener('click', ({ pageX, pageY }) => {
+    //     const img = document.createElement('img');
+    //     img.src = './nuke.jpg';
+    //     img.style.left = `${pageX - 20}px`;
+    //     img.style.top = `${pageY-20}px`;
+    //     document.body.appendChild(img);
+    // });
+    function insert() {
+        var imgDestination = document.getElementById("containerRight");
+        var imgAdded = document.createElement("img");
+        imgAdded.src = "./nuke.png";
+        imgDestination.appendChild(imgAdded);
+        ImgRandomPosition(imgAdded);
+    }
+
+
+    function ImgRandomPosition(imgAdded) {
+        var left = Math.floor((Math.random() * 400) + 1) + "px";
+        var top = Math.floor((Math.random() * 400) + 1) + "px";
+        var imagestyle = imgAdded.style;
+        imagestyle.position = "absolute";
+        imagestyle.top = top;
+        imagestyle.left = left;
+    }
 </script>
 
 </html>
