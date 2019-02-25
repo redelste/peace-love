@@ -87,14 +87,11 @@
 
 
     function ImgRandomPosition(imgAdded) {
-        var left = ((Math.random() * 400) + 1) + "px";
-        var top = ((Math.random() * 400) + 1) + "px";
-        var right = ((Math.random() * 400) + 1) + "px";
+        var left = ((Math.random() * window.innerWidth)) + "px";
+        var top = ((Math.random() * window.innerHeight)) + "px";
         var imagestyle = imgAdded.style;
         imagestyle.top = top;
         imagestyle.left = left;
-        imagestyle.right = right;
-
     }
 </script>
 
